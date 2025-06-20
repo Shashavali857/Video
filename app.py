@@ -5,6 +5,11 @@ import os
 
 app = Flask(__name__)
 
+# Basic home route for Render health check
+@app.route("/")
+def home():
+    return "Hello, Unstar AI Video!"
+
 @app.route('/generate', methods=['POST'])
 def generate():
     data = request.get_json()
